@@ -15,13 +15,13 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 function Book(obj) {
-    this.img ='https://i.imgur.com/J5LVHEL.jpg'|| obj.imageLinks.smallThumbnail,
-        this.title = obj.title,
-        this.author = obj.authors,
-        this.description = obj.description || 'there is No description about this book yet !!'
+    this.img = 'https://i.imgur.com/J5LVHEL.jpg' || obj.imageLinks.smallThumbnail,
+    this.title = obj.title,
+    this.author = obj.authors,
+    this.description = obj.description || 'there is No description about this book yet !!'
 }
 
-app.get('/welcome', (req, res) => {
+app.get('/', (req, res) => {
     res.render('pages/index');
 });
 
@@ -46,10 +46,6 @@ function createSearch(request, response) {
         })
         .then(results => response.render('pages/searches/show', { searchResults: results }))
 }
-
-
-
-
 
 
 
