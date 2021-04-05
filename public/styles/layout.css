@@ -1,4 +1,4 @@
-@media only screen and (max-width: 480px){
+/* @media only screen and (max-width: 480px){ */
     body{
         height: 660px;
         width: 100%;
@@ -147,4 +147,4 @@
         text-align: center;
         font-size: x-large;
     }
-}
+/* } */
