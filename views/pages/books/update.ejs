@@ -19,16 +19,19 @@
             <h3>Search Result</h3>
         </div>
         </div>
-            <div class="container">
-                <img src="<%=data.imge_url %>" alt="">
-                <h5><%= data.title %></h5>
-                <h6><%= data.author %></h6>
-                <p><%= data.description %></p>
-                <a href="/update/<%=data.id %>">Update</a>
-                <form action="/delete/<%=data.id %>?_method=DELETE" method="post">
-                <button>delete</button>
-                </form>
-            </div>
+        <div class="container">
+            <form action="/update/<%= data.id%>?_method=PUT" method="post">
+                <label>Title</label>
+                <input type="text" name='title' value="<%= data.title %>">
+                <label>Author</label>
+                <input type="text" name='author' value="<%= data.author %>">
+                <label>Description</label>
+                <textarea name="description" id="" cols="30" rows="10">
+                    <%= data.description %>
+                </textarea>
+                <button>Update</button>
+            </form>
+        </div>
     </main>
     <footer>
         <div></div>
