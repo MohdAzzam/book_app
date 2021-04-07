@@ -70,7 +70,8 @@ app.post('/addFav', (req, res) => {
     let newAutour = `INSERT INTO authors(name) VALUES ($1) RETURNING *`;
 
     client.query(sql2, [author]).then(data => {
-        if (data.rows.length > 1) {
+        console.log(data.rows);
+        if (data.rows.length > 0) {
             let values = [data.rows[0].id, req.body.title, req.body.isbn, req.body.imge_url, req.body.description];
             client.query(sql, values).then((result) => {
             }).catch(err => console.log('ERRRRRRRRRRROR',err));
